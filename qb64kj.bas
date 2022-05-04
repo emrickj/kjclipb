@@ -1,4 +1,4 @@
-_TITLE "Kanji Lookup"
+_TITLE "Kanji Lookup V1.1"
 ON ERROR GOTO Errhandler
 COMMON SHARED rs$
 OPEN "kjfile.dat" FOR RANDOM ACCESS READ AS #1 LEN = 256
@@ -24,6 +24,12 @@ DO
             PRINT #2, ""
             PRINT #2, "Meaning: "; B$
             PRINT #2, ""
+            IF N = NR THEN
+                PRINT "This kanji is the last kanji added to the file."
+                PRINT #2, "This kanji is the last kanji"
+                PRINT #2, ""
+                PRINT #2, "added to the file."
+            END IF
             fl = 1
         END IF
     NEXT
