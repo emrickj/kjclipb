@@ -1,10 +1,12 @@
-_TITLE "Kanji Lookup V1.1"
+_TITLE "Kanji Lookup V1.2"
 ON ERROR GOTO Errhandler
 COMMON SHARED rs$
 OPEN "kjfile.dat" FOR RANDOM ACCESS READ AS #1 LEN = 256
 OPEN "COM3:9600,N,8,1,BIN,CS0,DS0" FOR OUTPUT AS 2
 FIELD #1, 2 AS A$, 20 AS B$, 2 AS C$
 NR = LOF(1) / 256
+PRINT
+PRINT "Welcome to Kanji Lookup V1.2"
 DO
     fl = 0
     waitkj
